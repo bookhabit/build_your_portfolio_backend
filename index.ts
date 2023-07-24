@@ -27,10 +27,12 @@ const port = 4000 || process.env.PORT;
 const bcryptSalt = bcrypt.genSaltSync(10);
 const jwtSecret = 'fasefraw4r5r3wq45wdfgw34twdfg';
 
+
+
 app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads/',express.static(__dirname+'/uploads'))
-app.use(cors({credentials:true,origin:['https://build-your-portfolio.netlify.app','http://localhost:5173']}));
+app.use(cors({credentials:true}));
 
 // 몽고DB 연결
 connectToMongoDB();
