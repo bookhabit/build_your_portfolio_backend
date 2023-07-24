@@ -33,7 +33,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads/',express.static(__dirname+'/uploads'))
 app.use(cors(
-  {credentials:true,origin:['https://build-your-portfolio.netlify.app','http://localhost:5173','http://172.30.1.80:5173']}));
+  {origin:'*'}));
 
 // 몽고DB 연결
 connectToMongoDB();
